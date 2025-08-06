@@ -1,27 +1,36 @@
-# Truck Load Optimization Prototype
+# Advanced Truck Load Optimization App
 
-This is a prototype logistics app built using Streamlit. It allows users to:
-- Enter shipment details (size, weight, destination)
-- Visualize how shipments fit in a 50ft x 8ft flatbed truck
-- Check for overweight loads
-- View estimated remaining capacity
+This Streamlit app allows logistics companies to:
+
+- Enter shipment details including start and end cities, size, weight, and hazmat status
+- Automatically calculate the driving distance between cities using OpenRouteService
+- Estimate fuel and wage costs based on user-defined parameters
+- Apply a custom profit margin and view total cost estimates
+- Visualize how freight is arranged inside a 50 ft x 8 ft truck
 
 ## How to Run Locally
 
-1. Clone this repository or download the files
-2. Install dependencies:
+1. Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
-3. Run the Streamlit app:
+
+2. Run the app:
 ```bash
 streamlit run app.py
 ```
 
-## Features
+## OpenRouteService API Key
 
-- Interactive shipment form
-- Load optimization visualization (top-down truck layout)
-- Simple truck capacity tracking
+To use the routing feature, you'll need a free OpenRouteService API key from https://openrouteservice.org/dev/#/signup.
 
-This is a basic MVP to demonstrate logistics optimization potential. Ideal for development of AI-powered load sharing and carbon-saving features in future versions.
+This version includes your pre-configured API key, but you can replace it in `app.py` for security.
+
+## Deploy to Streamlit Cloud
+
+1. Upload the following files to a public GitHub repo:
+   - app.py
+   - requirements.txt
+   - README.md (optional)
+
+2. Go to https://streamlit.io/cloud and deploy from your GitHub repo.
